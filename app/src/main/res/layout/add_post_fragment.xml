@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.firstcode.interviewapp.ui.post.add.AddPostViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.post.add.AddPostFragment"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar"
+            viewModel="@{viewModel}"/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/title"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/style_normal_et"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:imeOptions="actionNext"
+            android:text="@={viewModel.title}"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/body"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/style_normal_et"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:minLines="4"
+            android:padding="12dp"
+            android:imeOptions="actionDone"
+            android:text="@={viewModel.body}"
+            android:textSize="14sp" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/save"
+            android:textColor="@android:color/white"
+            android:onClick="@{() -> viewModel.save()}"
+            setButtonVisibility="@{viewModel.showProgress}"/>
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            setProgressVisibility="@{viewModel.showProgress}"/>
+
+    </LinearLayout>
+</layout>

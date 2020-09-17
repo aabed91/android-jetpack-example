@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FirstCodeInterviewApp</string>
+    <string name="ok">Ok</string>
+    <string name="err_intenet_connection">Internet connection error!</string>
+    <string name="save">Save</string>
+    <string name="body">Body</string>
+    <string name="title">Title</string>
+    <string name="operation_done">Operation done successfully</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/postsFragment">
+
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.firstcode.interviewapp.ui.post.PostsFragment"
+        android:label="PostsFragment" >
+        <action
+            android:id="@+id/action_postsFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
+        <action
+            android:id="@+id/action_postsFragment_to_addPostFragment"
+            app:destination="@id/addPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="com.firstcode.interviewapp.ui.post.details.PostDetailsFragment"
+        android:label="post_details_fragment"
+        tools:layout="@layout/post_details_fragment" >
+        <argument
+            android:name="post"
+            app:argType="com.firstcode.interviewapp.db.DBPost" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPostFragment"
+        android:name="com.firstcode.interviewapp.ui.post.add.AddPostFragment"
+        android:label="add_post_fragment"
+        tools:layout="@layout/add_post_fragment" >
+        <argument
+            android:name="post"
+            app:argType="com.firstcode.interviewapp.db.DBPost"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
