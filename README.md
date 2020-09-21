@@ -3,6 +3,7 @@
 Android JetPack example
 
 This project is a simple example project using Android JetPack.
+
 This app lists some posts from https://jsonplaceholder.typicode.com on RecyclerView and provide:
 - See post details
 - Delete post
